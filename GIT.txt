@@ -32,7 +32,9 @@ Ahora el archivo esta incluído en el HEAD, pero aún no en tu repositorio remot
 
 envío de cambios
 Tus cambios están ahora en el HEAD de tu copia local. Para enviar estos cambios a tu repositorio remoto ejecuta
-git push origin master
+git push origin master (deprecated)
+git push origin main
+
 Reemplaza master por la rama a la que quieres enviar tus cambios.
 
 Si no has clonado un repositorio ya existente y quieres conectar tu repositorio local a un repositorio remoto, usa
