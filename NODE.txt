@@ -1,0 +1,44 @@
+
+Descargar NodeJS e instalar
+https://nodejs.org/en/download/
+
+Durante la instalación
+Marcar la casilla que permita instalar todas las herramientas como Chocolatey
+
+
+
+Verificar Instalación
+Validar la versión de NodeJS, ingresando en la terminal:
+node –v
+
+Validar la versión de NPM, ingresando en la terminal:
+npm –v
+
+Uso basico de Node.js
+Node.js is a framework, which means that it doesn’t work as a normal application. 
+Instead, it interprets commands that you write. 
+To test your new Node.js installation, create a Hello World script.
+
+1. Abre notepad y copia el siguiente código:
+
+var http = require('http');
+ http.createServer(function (req, res) {
+   res.writeHead(200, {'Content-Type': 'text/html'});
+   res.end('Hello World!');
+ }).listen(8080);
+
+2. Guarda el archivo y en la terminal escribe:
+
+node \users\<your_username>\myprogram.js
+It will look like nothing has happened. In reality, your script is running in the background. 
+You may see a Windows Defender notice about allowing traffic – for now, click Allow.
+
+3. Abre el explorador e ingresa la URL:
+http://localhost:8080
+
+In the very upper-left corner, you should see the text Hello World!
+
+Right now, your computer is acting like a server. Any other computer that tries to access your system on port 8080 will see the Hello World notice.
+
+To turn off the program, switch back to PowerShell and press Ctrl+C. The system will switch back to a command prompt. 
+You can close this window whenever you are ready.
