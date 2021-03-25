@@ -1,0 +1,12 @@
+Installation
+To install prebuilt Electron binaries, use npm. The preferred method is to install Electron as a development dependency in your app:
+
+npm install electron --save-dev
+Copy
+See the Electron versioning doc for info on how to manage Electron versions in your apps.
+
+Global Installation
+You can also install the electron command globally in your $PATH:
+
+npm install electron -g
+

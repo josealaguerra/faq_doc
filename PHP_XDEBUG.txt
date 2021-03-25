@@ -1,0 +1,17 @@
+1.)Entrar a esta URL http://localhost/dashboard/phpinfo.php
+2.)Copiar todo con CTRL+A y luego CTRL+C
+3.)Pegarlo en la segunda URL: https://xdebug.org/wizard
+4.)Presionar el boton ANALIZE my phpInfo()
+5.)Descargar DLL
+6.)Copiar DLL a ruta de XAMPP
+9.)Reiniciar APACHE.
+
+
+
+
+Instructions
+Download php_xdebug-3.0.3-8.0-vs16-x86_64.dll
+Move the downloaded file to C:\xampp\php\ext
+Edit C:\xampp\php\php.ini and add the line
+zend_extension = C:\xampp\php\ext\php_xdebug-3.0.3-8.0-vs16-x86_64.dll
+Restart the webserver

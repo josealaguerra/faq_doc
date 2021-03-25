@@ -1,2 +1,122 @@
+
+Composer es un manejador de paquetes para PHP que proporciona un estándar para administrar, descargar e instalar dependencias y librerías. 
+Similar a NPM en Node.js y Bundler en Ruby, Composer es la solución ideal cuando trabajamos en proyectos complejos que dependen de múltiples fuentes de instalación. 
+En lugar de tener que descargar cada dependencia de forma manual, Composer hace esto de forma automática por nosotros.
+
+
 Crea un archivo composer.json para tu proyecto
 composer init
+
+
+Instalación de composer
+Windows 
+Descargar el instalador de Composer desde este enlace.
+
+Ubuntu
+Antes de continuar asegúrate de instalar lo siguiente, necesario para la correcta instalación de Composer:
+
+# Instalar paquetes necesarios en Ubuntu
+sudo apt install curl php-cli php-mbstring git unzip
+En Linux o Mac simplemente debemos ejecutar los siguientes comandos:
+
+# Descargar el archivo de instalación de Composer
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+Esto descargará el archivo de instalación de Composer. Para instalarlo de forma global ejecuta el siguiente comando:
+
+# Instalar Composer de forma global una vez descargado
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+Hecho esto verás lo siguiente en la terminal:
+
+# Resultado en la terminal
+All settings correct for using Composer
+Downloading...
+Composer (version 1.6.5) successfully installed to: /usr/local/bin/composer
+Use it: php /usr/local/bin/composer
+Para ejecutar Composer simplemente escribe el comando composer en la terminal y presiona Enter, verás algo como esto:
+
+Ejecución de Composer en la terminal
+
+Como puedes observar en la imagen, Composer tiene una lista de comandos y argumentos que nos permiten realizar diferentes tareas. 
+Vamos a detallar y describir los comandos más importantes, uno por uno:
+
+$ composer init
+
+Al ejecutar este comando solicitará cierta información que servirá para crear el archivo composer.json, este lo explicaré en el siguiente tutorial, solo mencionaré que la información requerida es básica para el archivo, como el nombre del paquete, descripción, autor(es), página del proyecto y las dependencias. No te preocupes, te explicaré detalladamente qué es cada uno de estos datos.
+
+$ composer install
+
+Este comando procesa el archivo composer.json y resuelve las dependencias, normalmente las instala en un directorio llamado /vendor, pero podemos especificar cualquier otro.
+
+$ composer update
+
+Actualiza las dependencias de tu proyecto a la última versión y también actualiza el archivo composer.lock. Esto se puede hacer de varias maneras, imagina que sólo quieres actualizar una dependencia en específico, para hacer eso tienes que indicar el nombre del paquete de la siguiente manera:
+
+$ composer update vendor/package another-vendor/another-package vendor-x/package-x
+
+Esto sólo actualizará las dependencias especificadas, si quieres actualizar todas las dependencias de un cierto paquete puede ahorrar muchos caracteres utilizando un comodín *, de la siguiente manera:
+
+$ composer update vendor-x/*
+
+El comando require instala las dependencias especificadas, este lo explicaré más detalladamente en el siguiente tutorial, la sintaxis es la siguiente:
+
+$ composer require vendor/package:*
+
+El comando search busca el paquete indicado en Packagist, sólo tienes que pasarle el nombre del paquete.
+
+$ php composer search monolog
+
+El comando show muestra los paquetes disponibles y también puedes ver los detalles de un paquete en específico. Basta con pasarle un argumento, este tiene que ser el nombre del paquete:
+
+$ php composer show vendor/package
+
+Desplegará información como: el nombre del paquete, versiones, el tipo de paquete, el código fuente, el zip del código fuente, licencia, etc.
+
+El comando depends muestra la lista de paquetes de los cuales depende el paquete indicado. Sí, me estoy refiriendo a las librerías de terceros. Muestra los paquetes de tipo require y require-dev
+
+$ php composer depends vendor/package
+
+Para asegurarnos que nuestro archivo composer.json está escrito correctamente y que alguno no tendrá errores al descargarlo y tampoco tener problemas al instalar las dependencias, como algún carácter mal escrito, podemos utilizar el comando validate para verificar que todo está correctamente bien.
+
+$ php composer validate
+
+Si a menudo realizas cambios en tus dependencias y las has instalado mediante el código fuente del repositorio, el comando status te permite comprobar si has hecho cambios en alguna de ellas, así como el git status nos indica qué archivos hemos modificado, este comando funciona de la misma manera:
+
+$ php composer status -v
+
+Si añadimos la opción -v nos brinda información más detallada sobre los cambios producidos.
+
+# Resultado de ejecutar composer status -v
+You have changes in the following dependencies:
+vendor/seld/jsonlint:
+M README.mdown
+El comando self-update actualiza el propio Composer a la versión más reciente, no tienes que realizar ningún otro paso más escribir en la consola lo siguiente:
+
+$ php composer self-update
+
+Y listo, tendrás disponible la versión más actualizada del manejador. ¿Lindo, no?
+
+El comando config te permite editar varias opciones de Composer, tanto en el archivo local del proyecto como en el archivo global.
+
+$ php composer config --list
+
+El comando create-project crea un nuevo proyecto, es necesario pasar como parámetros el vendor y package correspondiente. Esto es lo mismo que descargar el proyecto y después ejecutar el archivo composer.json que venga en él, el siguiente ejemplo crea un proyecto de laravel.
+
+$ php composer create-project laravel/laravel mi-proyecto
+
+Ahora, si necesitas actualizar tu archivo autoloader porque tienes nuevas clases puedes hacerlo con el comando dump-autoload, es como ejecutar install o update, pero la ventaja es que puedes especificar que se cree un arreglo de todas las clases del proyecto con sus respectivos archivos, de la siguiente manera:
+
+$ php composer dump-autoload --optimize
+
+El comando run-script permite ejecutar manualmente alguno de los scripts definidos por algún paquete.
+
+$ php composer run-script nombre-script --no-dev
+
+Hemos agregado --no-dev para desactivar el modo de desarrollo.
+
+Utiliza el comando help para ver información sobre el comando solicitado.
+
+$ php composer help install
+
+El comando remove sirve para eliminar alguna dependencia que ya no utilicemos, de la siguiente manera:
+
+$ php composer remove vendor/package

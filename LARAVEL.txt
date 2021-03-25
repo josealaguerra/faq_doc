@@ -1,0 +1,52 @@
+
+#instalacion
+install composer
+
+#Create app
+Step 3 − Create a new directory anywhere in your system for your new Laravel project. After that, move to path where you have created the new directory and type the following command there to install Laravel.
+
+composer create-project laravel/laravel –-prefer-dist
+Now, we will focus on installation of version 5.7. In Laravel version 5.7, you can install the complete framework by typing the following command −
+
+composer create-project laravel/laravel test dev-develop
+
+
+--Debug
+The above command will install Laravel in the current directory. Start the Laravel service by executing the following command.
+
+php artisan serve
+
+
+Ingresa esta URL a tu explorador
+http://127.0.0.1:8000/
+
+
+--Crear un controlador y el modelo
+php artisan make:controller MullerController --resource --model=Muller
+
+
+--agregar ruta en el web.php
+Route::get('/newtonRaphson', 'NewtonRaphsonController@index');
+
+--Para lo que una variable lleva en tiempo de ejecución
+var_dump($request);die;
+dd($request);
+
+
+
+#crea las tablas de migracion
+php artisan make:migration create_table_muller --create=muller
+php artisan make:migration create_table_newtonRaphson --create=newtonRaphson
+
+#crea las tablas y la bd
+php artisan migrate
+
+--Modelo representa un bojeto debe ir en singular
+php artisan make:model Muller
+
+--Entonre
+php artisan tinker
+
+
+
+php artisan make:migration create_columns_muller --table=muller
