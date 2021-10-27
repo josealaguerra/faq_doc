@@ -165,6 +165,9 @@ sudo snap install netbeans --classic
 # #assistive_technologies=org.GNOME.Accessibility.AtkWrapper
 
 
+#How to solve @java.lang.UnsatisfiedLinkError: no splashscreen in java.library.path: [/usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /lib/x86_64-linux-gnu, /usr/lib/x86_64-linux-gnu, /usr/lib/jni, /lib, /usr/lib] at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2670)@
+sudo apt-get install openjdk-14-jre
+
 
 sudo dnf install git-all
 If you’re on a Debian-based distribution, such as Ubuntu, try apt:
