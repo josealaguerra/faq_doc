@@ -183,6 +183,9 @@ git config --list
 Copy
 The output should look something like this:
 
+Now cache the given record in your computer to remembers the token:
+git config --global credential.helper cache
+
 
 
 
