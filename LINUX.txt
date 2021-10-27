@@ -143,3 +143,48 @@ lastlog -u tecmint 	#show lastlog records for specific user tecmint
 #..
 #That’s it! If you know any other command-line trick or command to view user account details do share with us.
 
+
+
+
+#Install JAVA
+#JRE 8
+sudo apt-get install openjdk-8-jre-headless
+
+#jdk 8
+sudo apt-get install openjdk-8-jdk-headless
+
+#Netbeans 12
+#install
+sudo snap install netbeans --classic
+
+#How to solve "java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper".  This can be done by editing the accessibility.properties file for OpenJDK 8 (change the version to whichever is actually in use on your system):
+
+#  sudo vim /etc/java-8-openjdk/accessibility.properties
+
+#Comment out the following line:
+# #assistive_technologies=org.GNOME.Accessibility.AtkWrapper
+
+
+
+sudo dnf install git-all
+If you’re on a Debian-based distribution, such as Ubuntu, try apt:
+
+$ sudo apt install git-all
+
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+CopyCopy
+To verify the configuration changes, type:
+
+git config --list
+Copy
+The output should look something like this:
+
+
+
+
+
+
+
+
+
