@@ -191,6 +191,48 @@ git config --global credential.helper cache
 
 
 
+sudo apt install net-tools
+ifconfig -a
 
+
+
+# Install openSSH
+sudo apt install openssh-server
+
+# Modify port, IP, si usa o no password
+sudo nano /etc/ssh/sshd_config
+
+# **************************
+# SSH is usually 22, but I like to use something like 2222 so it's less obvious but still easy to remember AND is different from your Window's machine's 22. Note that I told it to listen on 0.0.0.0, so, any adapter. You can also set PasswordAuthentication to "no" if you want to use SSH keys rather than passwords for authentication. Set it to "yes" if you know what you're doing and don't know how to use ssh keys.
+# **************************
+# /etc/ssh/sshd_config
+# **************************
+#  ...STUFF ABOVE THIS...
+#  Port 2222
+#  #AddressFamily any
+#  ListenAddress 0.0.0.0
+#  #ListenAddress ::
+# **************************
+
+
+
+
+
+
+
+
+# Iniciar servicio SSH
+sudo service ssh start
+
+
+# Trying to start ssh server on my WSL Ubuntu installation, I got this error:
+# sshd: no hostkeys available -- exiting
+# After searching on the web, I found that the solution was really simple, at least in this case.
+# I only needed to run
+
+sudo ssh-keygen -A
+# In the /etc/ssh/ folder, and the start the server
+
+/etc/init.d/ssh start
 
 
