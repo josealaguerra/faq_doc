@@ -1,1 +1,40 @@
 
+
+#The WSL commands below are listed in a format supported by PowerShell or Windows Command Prompt. To run these commands from a Bash / Linux distribution command line, you must replace wsl with wsl.exe.
+
+# Install
+wsl --install
+
+# Install a specific Linux distribution
+wsl --install --distribution <Distribution Name>
+
+# List available Linux distributions
+wsl --list --online
+
+# See a list of the Linux distributions available through the online store. This command can also be entered as: wsl -l -o.
+
+# List installed Linux distributions
+wsl --list --verbose
+
+# Shutdown
+wsl --shutdown
+
+# Terminate
+wsl --terminate <Distribution Name>
+
+
+# FORWARD PORTS INTO WSL2
+# Now, from an Administrator Windows prompt - that can be cmd.exe or powershell.exe, it doesn't matter, use the net shell "netsh" to add a portproxy rule. Again, change connectaddress to YOUR WSL2 ipaddress, which is an internal address to your machine.
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=2222 connectaddress=172.23.129.80 connectport=2222
+
+# OPEN THE FIREWALL
+# Next, from the same Administrator Windows prompt, open an incoming Firewall Port. You can do it from the Advanced Firewall Settings, but even easier you can use netsh again!
+netsh advfirewall firewall add rule name=”Open Port 2222 for WSL2” dir=in action=allow protocol=TCP localport=2222
+
+# You can list all your portproxy rules like this if you're concerned:
+netsh interface portproxy show v4tov4
+
+# You can remove them all if you want with
+netsh int portproxy reset all
+
+
