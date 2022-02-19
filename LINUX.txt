@@ -251,3 +251,40 @@ python3 --version
 
 
 
+
+#CREAR USUARIOS 
+#Si queremos que se nos creen las carpetas automáticamente en el directorio /home debemos hacerlo con la opción -m
+sudo useradd -m usuarionuevo
+
+
+#si queremos definir una contraseña usaremos el siguiente comando:
+sudo passwd usuarionuevo
+
+#Para modificar una cuenta de usuario Linux existente, escriba: 
+usermod kilroy
+
+#Este mandato usermod cambia los grupos a los que pertenece el usuario kilroy.
+
+#Para suprimir una cuenta de usuario Linux existente, escriba: 
+userdel kilroy
+
+#El mandato userdel elimina la cuenta kilroy, pero no elimina el directorio de inicio de kilroy.
+
+
+#Agregar grupos Linux
+#Cuando utilice el mandato useradd para crear un usuario Linux, el mandato creará de forma automática un grupo Linux con el mismo nombre. Puede utilizar el mandato groupadd para crear un grupo Linux.  La sintaxis del mandato groupadd es:
+/usr/sbin/groupadd [-G gid [-o][-r][-f] group
+
+##Para añadir un grupo, introduzca: 
+groupadd staff
+
+#Este mandato groupadd añade el grupo denominado staff.
+#Para modificar un grupo, introduzca: 
+groupmod -n exestaff staff
+#Este mandato groupmod cambia el grupo denominado staff a exestaff
+
+
+#Para suprimir un grupo, escriba: 
+groupdel staff
+
+#El mandato groupdel suprime el grupo staff. No puede eliminar el grupo principal del usuario. Deberá eliminar primer el usuario o cambiar el grupo principal del usuario.
