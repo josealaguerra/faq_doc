@@ -38,3 +38,18 @@ netsh interface portproxy show v4tov4
 netsh int portproxy reset all
 
 
+
+
+#***************************************************************************************************
+#Añadir llaves SSH a GITHUB
+
+#Generar las llaves ssh para Windows 10
+ssh-keygen
+
+Este comando generará varios archivos en la carpeta c:\Users\<Username>\.ssh\".  El archivo id_rsa.pub contiene la llave publica default para nuestra computadora.
+
+Ir a github.com, buscar la opción "SETTINGS", buscar la pestaña "ACCESS", buscar la opcion "SSH and GPY Keys", seleccionar el boton crear nue
+
+
+
+
