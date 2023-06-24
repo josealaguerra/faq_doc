@@ -121,3 +121,51 @@ GitHub Help
 A Visual Git Guide
 
 
+
+
+
+Para subir tu proyecto a Git, sigue estos pasos:
+
+1. Inicializa un repositorio Git en tu proyecto local si aún no lo has hecho. Puedes hacerlo ejecutando el siguiente comando en la raíz de tu proyecto:
+
+   ```
+   git init
+   ```
+
+2. Agrega los archivos y directorios que deseas incluir en el repositorio. Puedes usar el comando `git add` seguido de los nombres de los archivos o directorios, o utilizar `git add .` para agregar todos los archivos en el directorio actual y sus subdirectorios:
+
+   ```
+   git add .
+   ```
+
+3. Realiza un commit para guardar los cambios en tu repositorio local:
+
+   ```
+   git commit -m "Descripción del commit"
+   ```
+
+   Reemplaza "Descripción del commit" con una breve descripción de los cambios realizados en este commit.
+
+4. Ahora, necesitas crear un repositorio remoto en un servicio de alojamiento Git como GitHub o GitLab. Sigue las instrucciones en el sitio web del servicio para crear un nuevo repositorio vacío.
+
+5. Una vez creado el repositorio remoto, obtén la URL del repositorio.
+
+6. Conecta tu repositorio local con el repositorio remoto utilizando el siguiente comando:
+
+   ```
+   git remote add origin URL_del_repositorio_remoto
+   ```
+
+   Reemplaza "URL_del_repositorio_remoto" con la URL del repositorio remoto que has obtenido anteriormente.
+
+7. Ahora, puedes subir tus cambios al repositorio remoto ejecutando el siguiente comando:
+
+   ```
+   git push -u origin master
+   ```
+
+   Esto empujará los cambios de tu rama "master" (rama principal) a la rama "master" en el repositorio remoto. Si deseas utilizar una rama diferente, reemplaza "master" por el nombre de la rama correspondiente.
+
+8. ¡Enhorabuena! Tu proyecto ahora está subido a Git y está disponible en el repositorio remoto. Puedes realizar más cambios, commits y push para mantener tu repositorio actualizado.
+
+Recuerda que estos son solo los pasos básicos para subir tu proyecto a Git. También puedes explorar otras funcionalidades de Git, como ramas, fusiones, etiquetas, entre otros, para trabajar de manera más eficiente en tu proyecto.
