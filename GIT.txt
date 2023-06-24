@@ -169,3 +169,60 @@ Para subir tu proyecto a Git, sigue estos pasos:
 8. ¡Enhorabuena! Tu proyecto ahora está subido a Git y está disponible en el repositorio remoto. Puedes realizar más cambios, commits y push para mantener tu repositorio actualizado.
 
 Recuerda que estos son solo los pasos básicos para subir tu proyecto a Git. También puedes explorar otras funcionalidades de Git, como ramas, fusiones, etiquetas, entre otros, para trabajar de manera más eficiente en tu proyecto.
+
+
+
+
+
+
+
+
+
+
+
+
+Si necesitas cambiar la URL de un repositorio Git existente, puedes seguir estos pasos:
+
+1. Abre una terminal o línea de comandos y navega hasta el directorio del repositorio local en el que deseas cambiar la URL.
+
+2. Verifica la URL actual del repositorio ejecutando el siguiente comando:
+
+   ```
+   git remote -v
+   ```
+
+   Esto mostrará las URLs del repositorio remoto actualmente configuradas, por ejemplo, "origin".
+
+3. Elimina la configuración existente del repositorio remoto ejecutando el siguiente comando:
+
+   ```
+   git remote remove origin
+   ```
+
+   Reemplaza "origin" con el nombre del control remoto que deseas eliminar si es diferente.
+
+4. Agrega la nueva URL del repositorio remoto ejecutando el siguiente comando:
+
+   ```
+   git remote add origin Nueva_URL
+   ```
+
+   Reemplaza "Nueva_URL" con la nueva URL del repositorio Git al que deseas vincular tu repositorio local.
+
+5. Verifica nuevamente la configuración del repositorio remoto para asegurarte de que la nueva URL se haya configurado correctamente:
+
+   ```
+   git remote -v
+   ```
+
+   Esto debería mostrar la nueva URL del repositorio remoto.
+
+6. Si tienes cambios pendientes en tu repositorio local, realiza un push para sincronizar los cambios con el nuevo repositorio remoto:
+
+   ```
+   git push -u origin master
+   ```
+
+   Reemplaza "master" con el nombre de la rama correspondiente si estás trabajando en una rama diferente.
+
+Con estos pasos, has cambiado la URL del repositorio Git en tu repositorio local y lo has vinculado a la nueva URL del repositorio remoto. Asegúrate de tener los permisos adecuados para acceder al nuevo repositorio remoto y de que la URL sea correcta antes de realizar los cambios.
